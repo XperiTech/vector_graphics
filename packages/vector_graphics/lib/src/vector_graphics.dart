@@ -7,12 +7,11 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-
 import 'package:vector_graphics_codec/vector_graphics_codec.dart';
 
 import 'html_render_vector_graphics.dart';
-import 'loader.dart';
 import 'listener.dart';
+import 'loader.dart';
 import 'render_object_selection.dart';
 import 'render_vector_graphic.dart';
 
@@ -680,6 +679,7 @@ class VectorGraphicUtilities {
     BuildContext? context, {
     bool clipViewbox = true,
     VectorGraphicsErrorListener? onError,
+    Size? targetSize,
   }) async {
     TextDirection textDirection = TextDirection.ltr;
     Locale locale = ui.PlatformDispatcher.instance.locale;
@@ -696,6 +696,7 @@ class VectorGraphicUtilities {
           loader: loader,
           clipViewbox: clipViewbox,
           onError: onError,
+          targetSize: targetSize,
         );
       } catch (e) {
         debugPrint('Failed to decode $loader');

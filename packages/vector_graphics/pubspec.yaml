@@ -1,6 +1,7 @@
 name: vector_graphics
 description: A vector graphics rendering package for Flutter.
 version: 1.1.8
+publish_to: none
 homepage: https://github.com/dnfield/vector_graphics
 
 environment:
@@ -10,20 +11,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  vector_graphics_codec: 1.1.8
+  vector_graphics_codec:
+    git:
+      url: https://github.com/XperiTech/vector_graphics
+      path: packages/vector_graphics_codec
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-  vector_graphics_compiler: 1.1.8
-
-# Comment out before publishing
-dependency_overrides:
-  vector_graphics_codec:
-    path: ../vector_graphics_codec
   vector_graphics_compiler:
-    path: ../vector_graphics_compiler
+    git:
+      url: https://github.com/XperiTech/vector_graphics
+      path: packages/vector_graphics_compiler
+
+# Uncomment during development
+#dependency_overrides:
+#  vector_graphics_codec:
+#    path: ../vector_graphics_codec
+#  vector_graphics_compiler:
+#    path: ../vector_graphics_compiler
 
 platforms:
   android:
